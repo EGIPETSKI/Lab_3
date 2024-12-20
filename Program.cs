@@ -50,6 +50,11 @@ namespace AirportAutomationSystem
             if (string.IsNullOrWhiteSpace(newStatus)) throw new ArgumentException("Статус не может быть пустым.");
 
             Status = newStatus;
+            NotifyStatusChange();
+        }
+
+        private void NotifyStatusChange()
+        {
             Console.WriteLine($"Статус рейса {FlightNumber} обновлен на {Status}.");
         }
     }
@@ -98,28 +103,9 @@ namespace AirportAutomationSystem
         }
     }
 
-    class Program
+    public static class MenuHandler
     {
-        static void Main(string[] args)
-        {
-            if (!Authentication.Authenticate()) return;
-
-            List<Passenger> passengers = new();
-            List<Flight> flights = new();
-            List<Aircraft> aircrafts = new();
-
-            Console.WriteLine("Добро пожаловать в систему аэропорта!");
-
-            while (true)
-            {
-                DisplayMenu();
-                string option = Console.ReadLine();
-
-                if (!ProcessOption(option, passengers, flights, aircrafts)) break;
-            }
-        }
-
-        private static void DisplayMenu()
+        public static void DisplayMenu()
         {
             Console.WriteLine("\nМеню:");
             Console.WriteLine("1. Регистрация пассажира");
@@ -130,7 +116,7 @@ namespace AirportAutomationSystem
             Console.Write("Выберите опцию: ");
         }
 
-        private static bool ProcessOption(string option, List<Passenger> passengers, List<Flight> flights, List<Aircraft> aircrafts)
+        public static bool ProcessOption(string option, List<Passenger> passengers, List<Flight> flights, List<Aircraft> aircrafts)
         {
             switch (option)
             {
@@ -209,6 +195,28 @@ namespace AirportAutomationSystem
             Aircraft newAircraft = new Aircraft(aircraftId, aircraftModel);
             aircrafts.Add(newAircraft);
             newAircraft.Service();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (!Authentication.Authenticate()) return;
+
+            List<Passenger> passengers = new();
+            List<Flight> flights = new();
+            List<Aircraft> aircrafts = new();
+
+            Console.WriteLine("Добро пожаловать в систему аэропорта!");
+
+            while (true)
+            {
+                MenuHandler.DisplayMenu();
+                string option = Console.ReadLine();
+
+                if (!MenuHandler.ProcessOption(option, passengers, flights, aircrafts)) break;
+            }
         }
     }
 }
