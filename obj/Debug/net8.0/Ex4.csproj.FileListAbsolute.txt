@@ -1,0 +1,14 @@
+E:\VS Project\Ex4\bin\Debug\net8.0\Ex4.exe
+E:\VS Project\Ex4\bin\Debug\net8.0\Ex4.deps.json
+E:\VS Project\Ex4\bin\Debug\net8.0\Ex4.runtimeconfig.json
+E:\VS Project\Ex4\bin\Debug\net8.0\Ex4.dll
+E:\VS Project\Ex4\bin\Debug\net8.0\Ex4.pdb
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.AssemblyInfoInputs.cache
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.AssemblyInfo.cs
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.csproj.CoreCompileInputs.cache
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.dll
+E:\VS Project\Ex4\obj\Debug\net8.0\refint\Ex4.dll
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.pdb
+E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.genruntimeconfig.cache
+E:\VS Project\Ex4\obj\Debug\net8.0\ref\Ex4.dll
