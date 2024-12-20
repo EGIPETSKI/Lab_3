@@ -88,13 +88,13 @@ namespace AirportAutomationSystem
             Console.WriteLine("Введите пароль:");
             string enteredPassword = Console.ReadLine();
 
-            if (enteredPassword != CorrectPassword)
+            bool isAuthenticated = enteredPassword == CorrectPassword;
+            if (!isAuthenticated)
             {
                 Console.WriteLine("Неверный пароль. Доступ запрещен.");
-                return false;
             }
 
-            return true;
+            return isAuthenticated;
         }
     }
 
@@ -102,8 +102,7 @@ namespace AirportAutomationSystem
     {
         static void Main(string[] args)
         {
-            if (!Authentication.Authenticate())
-                return;
+            if (!Authentication.Authenticate()) return;
 
             List<Passenger> passengers = new();
             List<Flight> flights = new();
@@ -116,32 +115,7 @@ namespace AirportAutomationSystem
                 DisplayMenu();
                 string option = Console.ReadLine();
 
-                switch (option)
-                {
-                    case "1":
-                        RegisterPassenger(passengers);
-                        break;
-
-                    case "2":
-                        AddFlight(flights);
-                        break;
-
-                    case "3":
-                        TrackBaggage();
-                        break;
-
-                    case "4":
-                        ServiceAircraft(aircrafts);
-                        break;
-
-                    case "5":
-                        Console.WriteLine("Выход из программы.");
-                        return;
-
-                    default:
-                        Console.WriteLine("Неверный выбор, попробуйте снова.");
-                        break;
-                }
+                if (!ProcessOption(option, passengers, flights, aircrafts)) break;
             }
         }
 
@@ -154,6 +128,37 @@ namespace AirportAutomationSystem
             Console.WriteLine("4. Техническое обслуживание самолета");
             Console.WriteLine("5. Выход");
             Console.Write("Выберите опцию: ");
+        }
+
+        private static bool ProcessOption(string option, List<Passenger> passengers, List<Flight> flights, List<Aircraft> aircrafts)
+        {
+            switch (option)
+            {
+                case "1":
+                    RegisterPassenger(passengers);
+                    break;
+
+                case "2":
+                    AddFlight(flights);
+                    break;
+
+                case "3":
+                    TrackBaggage();
+                    break;
+
+                case "4":
+                    ServiceAircraft(aircrafts);
+                    break;
+
+                case "5":
+                    Console.WriteLine("Выход из программы.");
+                    return false;
+
+                default:
+                    Console.WriteLine("Неверный выбор, попробуйте снова.");
+                    break;
+            }
+            return true;
         }
 
         private static void RegisterPassenger(List<Passenger> passengers)
