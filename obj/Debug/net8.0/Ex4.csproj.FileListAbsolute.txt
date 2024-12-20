@@ -12,3 +12,18 @@ E:\VS Project\Ex4\obj\Debug\net8.0\refint\Ex4.dll
 E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.pdb
 E:\VS Project\Ex4\obj\Debug\net8.0\Ex4.genruntimeconfig.cache
 E:\VS Project\Ex4\obj\Debug\net8.0\ref\Ex4.dll
+C:\any\bin\Debug\net8.0\Ex4.exe
+C:\any\bin\Debug\net8.0\Ex4.deps.json
+C:\any\bin\Debug\net8.0\Ex4.runtimeconfig.json
+C:\any\bin\Debug\net8.0\Ex4.dll
+C:\any\bin\Debug\net8.0\Ex4.pdb
+C:\any\obj\Debug\net8.0\Ex4.GeneratedMSBuildEditorConfig.editorconfig
+C:\any\obj\Debug\net8.0\Ex4.AssemblyInfoInputs.cache
+C:\any\obj\Debug\net8.0\Ex4.AssemblyInfo.cs
+C:\any\obj\Debug\net8.0\Ex4.csproj.CoreCompileInputs.cache
+C:\any\obj\Debug\net8.0\Ex4.sourcelink.json
+C:\any\obj\Debug\net8.0\Ex4.dll
+C:\any\obj\Debug\net8.0\refint\Ex4.dll
+C:\any\obj\Debug\net8.0\Ex4.pdb
+C:\any\obj\Debug\net8.0\Ex4.genruntimeconfig.cache
+C:\any\obj\Debug\net8.0\ref\Ex4.dll
