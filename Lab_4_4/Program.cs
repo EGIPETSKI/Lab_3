@@ -1,21 +1,18 @@
-﻿using System.Reflection.Emit;
+﻿// Метод для установки режима, который включает или выключает элементы управления
+using System.Reflection.Emit;
 
-private void set_mode(bool mod)
+private void SetMode(bool mod)
 {
-    if (mod == true)
+    // Установка состояния элементов в зависимости от переданного режима
+    SetControlsState(mod, label1, button1, button2);
+    SetControlsState(!mod, button3, button4);
+}
+
+// Вспомогательный метод для изменения состояния переданных элементов управления
+private void SetControlsState(bool isEnabled, params Control[] controls)
+{
+    foreach (var control in controls)
     {
-        label1.Enabled = true;
-        button1.Enabled = true;
-        button2.Enabled = true;
-        button3.Enabled = false;
-        button4.Enabled = false;
-    }
-    else
-    {
-        label1.Enabled = false;
-        button1.Enabled = false;
-        button2.Enabled = false;
-        button3.Enabled = true;
-        button4.Enabled = true;
+        control.Enabled = isEnabled;
     }
 }
